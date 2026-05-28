@@ -1,6 +1,14 @@
+:root {
+    --header-color: #0d919f;
+    --navbar-color: #0a2540;
+    --background-color: #e4e0d6;
+    --text-color: #f5f0e8;
+    --call-to-action-color: #ff7060;
+}
+
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #e4e0d6;
+    background-color: var(--background-color);
     margin: 0;
     padding: 0;
 }
@@ -11,8 +19,8 @@ body {
 }
 
 header {
-    background-color: #0d919f ;
-    color: #f5f0e8;
+    background-color: var(--header-color);
+    color: var(--text-color);
     padding: 20px;
     text-align: center;
 
@@ -23,7 +31,7 @@ nav ul {
     margin-top: 0px;
     padding: 15px;
     text-align: center;
-    background-color: #0a2540;
+    background-color: var(--navbar-color);
 
 
 }
@@ -35,28 +43,74 @@ nav li {
 
 nav a {
     text-decoration: none;
-    color: #0d919f;
+    color: var(--header-color);
     font-weight: bold;
 }
 
 nav a:hover {
-    color: #ff7060;
+    color: var(--call-to-action-color);
 }
 
 section {
-    background-color: #0d919f;
+    background-color: var(--header-color);
     margin-top: 30px;
     padding: 20px;
-    color: #f5f0e8;
+    color: var(--text-color);
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
     gap: 20px;
 }
 
+.cards {
+    /* display: flex;
+    gap: 20px;
+    justify-content: center;
+    background-color: var(--header-color);
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    gap: 20px;
+    background-color: var(--header-color);
+}
+
+.cards:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    background-color: var(--call-to-action-color);
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--navbar-color);
+    padding: 0px;
+    width: 200px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+}
+
+.card img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+
+}
+
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    background-color: var(--call-to-action-color);
+}
+
 footer {
-    background-color: #0a2540;
-    color: #0d919f;
+    background-color: var(--navbar-color);
+    color: var(--header-color);
     text-align: center;
     padding: 15px;
     position: fixed;
