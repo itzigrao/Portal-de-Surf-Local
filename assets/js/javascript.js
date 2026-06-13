@@ -74,10 +74,14 @@ if (formInscricao) {
 const translations = {
   pt: {
     "subtitle": "Bem vindo ao Morning Sick! Um portal sobre o surfe local de Imbituba e região",
+    "subtitle_picos": "Picos de Surfe | Conheça alguns dos principais picos de Imbituba e região.",
+    "subtitle_camps": "Campeonatos Locais | Acompanhe os eventos e competições de surfe em Imbituba e região.",
+    "subtitle_aulas": "Aulas de Surf | Aprenda a surfar ou evolua o seu nível com os melhores instrutores de Imbituba e região.",
+    "subtitle_loja": "Loja Morning Sick | Vestuário e equipamentos essenciais para o verdadeiro surfista local.",
     "nav_home": "Home",
     "nav_picos": "Picos",
     "nav_camps": "Campeonatos",
-    "nav_aulas": "Aulas De Surf",
+    "nav_aulas": "Aulas de Surf",
     "nav_loja": "Loja",
     "recomenda": "Morning Sick Recomenda",
     "destaque": "3 picos em destaque",
@@ -90,6 +94,10 @@ const translations = {
   },
   en: {
     "subtitle": "Welcome to Morning Sick! A portal about local surfing in Imbituba and region",
+    "subtitle_picos": "Surf Spots | Discover some of the main surf spots in Imbituba and region.",
+    "subtitle_camps": "Local Championships | Follow the local surfing events and competitions in Imbituba and region.",
+    "subtitle_aulas": "Surf Lessons | Learn to surf or level up with the best instructors in Imbituba and region.",
+    "subtitle_loja": "Morning Sick Shop | Essential apparel and equipment for the true local surfer.",
     "nav_home": "Home",
     "nav_picos": "Spots",
     "nav_camps": "Championships",
@@ -106,6 +114,10 @@ const translations = {
   },
   es: {
     "subtitle": "¡Bienvenido a Morning Sick! Un portal sobre el surf local en Imbituba y región",
+    "subtitle_picos": "Picos de Surf | Descubre algunos de los principales picos de surf en Imbituba y región.",
+    "subtitle_camps": "Campeonatos Locales | Sigue los eventos y competiciones locales de surf en Imbituba y región.",
+    "subtitle_aulas": "Clases de Surf | Aprende a surfear o mejora tu nivel con los mejores instructores de Imbituba y región.",
+    "subtitle_loja": "Tienda Morning Sick | Ropa y equipo esenciales para el verdadero surfista local.",
     "nav_home": "Inicio",
     "nav_picos": "Picos",
     "nav_camps": "Campeonatos",
@@ -113,20 +125,37 @@ const translations = {
     "nav_loja": "Tienda",
     "recomenda": "Morning Sick Recomienda",
     "destaque": "3 picos destacados",
-    "confira": "Echa un vistazo a algunos picos de la región que merecen atención.",
+    "confira": "Echa un vistazo a alguns picos de la región que merecen atención.",
     "ver_pico": "Ver pico",
     "sobre_titulo": "Sobre Morning Sick",
-    "sobre_texto": "Morning Sick es un portal dedicado al surf local en Imbituba y región. Nuestro objetivo es proporcionar información actualizada sobre los mejores picos de surf, campeonatos locales, clases de surf y una tienda de ropa que representa lo que verdaderamente es la marca.",
+    "sobre_texto": "Morning Sick es un portal dedicado al surf local en Imbituba y región. Nuestro objetivo es proporcionar información actualizada sobre los mejores picos de surf, campeonatos locais, clases de surf y una tienda de ropa que representa lo que verdaderamente es la marca.",
     "oferecemos_titulo": "Lo que ofrecemos",
     "footer": "© 2026 Morning Sick. Todos los derechos reservados."
   }
 };
 
 function setLang(lang) {
+  // Salva no localStorage para persistir entre as abas
+  localStorage.setItem('preferredLang', lang);
+
+  // Traduz todos os elementos marcados
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (translations[lang] && translations[lang][key]) {
       el.textContent = translations[lang][key];
     }
   });
-}
+
+  // Atualiza classe ativa dos botões do seletor
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.remove('active');
+    const onClickAttr = btn.getAttribute('onclick');
+    if (onClickAttr && onClickAttr.includes(`'${lang}'`)) {
+      btn.classList.add('active');
+    }
+  });
+}
+
+// Inicializa a tradução com o idioma persistido ou padrão 'pt'
+const savedLang = localStorage.getItem('preferredLang') || 'pt';
+setLang(savedLang);

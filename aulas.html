@@ -5,20 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aulas de Surf | Morning Sick</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/javascript.js" defer></script>
 </head>
 <body>
     <header class="site-header">
-        <h1>Aulas de Surf</h1>
-        <p>Aprenda a surfar ou evolua o seu nível com os melhores instrutores de Imbituba e região.</p>
+        <div class="lang-switch">
+            <button class="lang-btn" onclick="setLang('pt')" title="Português">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 504" class="flag-icon">
+                    <rect width="720" height="504" fill="#009c3b"/>
+                    <polygon points="360,40 640,252 360,464 80,252" fill="#ffdf00"/>
+                    <circle cx="360" cy="252" r="113.4" fill="#002776"/>
+                </svg>
+            </button>
+            <button class="lang-btn" onclick="setLang('en')" title="English">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 741 390" class="flag-icon">
+                    <rect width="741" height="390" fill="#bb133e"/>
+                    <rect width="741" height="30" y="30" fill="#fff"/>
+                    <rect width="741" height="30" y="90" fill="#fff"/>
+                    <rect width="741" height="30" y="150" fill="#fff"/>
+                    <rect width="741" height="30" y="210" fill="#fff"/>
+                    <rect width="741" height="30" y="270" fill="#fff"/>
+                    <rect width="741" height="30" y="330" fill="#fff"/>
+                    <rect width="296" height="210" fill="#3c3b6e"/>
+                    <g fill="#fff">
+                        <circle cx="50" cy="40" r="7"/>
+                        <circle cx="110" cy="40" r="7"/>
+                        <circle cx="170" cy="40" r="7"/>
+                        <circle cx="230" cy="40" r="7"/>
+                        <circle cx="80" cy="105" r="7"/>
+                        <circle cx="140" cy="105" r="7"/>
+                        <circle cx="200" cy="105" r="7"/>
+                        <circle cx="50" cy="170" r="7"/>
+                        <circle cx="110" cy="170" r="7"/>
+                        <circle cx="170" cy="170" r="7"/>
+                        <circle cx="230" cy="170" r="7"/>
+                    </g>
+                </svg>
+            </button>
+            <button class="lang-btn" onclick="setLang('es')" title="Español">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500" class="flag-icon">
+                    <rect width="750" height="500" fill="#c60b1e"/>
+                    <rect width="750" height="250" y="125" fill="#ffc400"/>
+                    <rect x="200" y="200" width="50" height="60" rx="10" fill="#c60b1e"/>
+                    <circle cx="225" cy="230" r="12" fill="#ffc400"/>
+                    <path d="M200,200l25,-20l25,20z" fill="#ffc400"/>
+                </svg>
+            </button>
+        </div>
+        <div class="header-title-container">
+            <img src="assets/img/logo.png" alt="Morning Sick Logo" class="site-logo">
+            <h1>Morning Sick</h1>
+        </div>
+        <p data-i18n="subtitle_aulas">Aulas de Surf | Aprenda a surfar ou evolua o seu nível com os melhores instrutores de Imbituba e região.</p>
     </header>
 
     <nav class="site-nav" aria-label="Menu principal">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="mainpicos.html">Picos</a></li>
-            <li><a href="camps.html">Campeonatos</a></li>
-            <li><a href="aulas.html" class="active">Aulas de Surf</a></li>
-            <li><a href="loja.html">Loja</a></li>
+            <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+            <li><a href="mainpicos.html" data-i18n="nav_picos">Picos</a></li>
+            <li><a href="camps.html" data-i18n="nav_camps">Campeonatos</a></li>
+            <li><a href="aulas.html" class="active" data-i18n="nav_aulas">Aulas de Surf</a></li>
+            <li><a href="loja.html" data-i18n="nav_loja">Loja</a></li>
         </ul>
     </nav>
 
@@ -128,7 +175,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Morning Sick. Todos os direitos reservados.</p>
+        <p data-i18n="footer">&copy; 2026 Morning Sick. Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
