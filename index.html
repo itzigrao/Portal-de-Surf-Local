@@ -11,20 +11,25 @@
 
 <body>
     <header>
+        <div class="lang-switch">
+            <button class="lang-btn" onclick="setLang('pt')" title="Português">🇧🇷</button>
+            <button class="lang-btn" onclick="setLang('en')" title="English">🇺🇸</button>
+            <button class="lang-btn" onclick="setLang('es')" title="Español">🇪🇸</button>
+        </div>
         <div class="header-title-container">
             <img src="assets/img/logo.png" alt="Morning Sick Logo" class="site-logo">
             <h1>Morning Sick</h1>
         </div>
-        <p>Bem vindo ao Morning Sick! Um portal sobre o surfe local de Imbituba e região</p>
+        <p data-i18n="subtitle">Bem vindo ao Morning Sick! Um portal sobre o surfe local de Imbituba e região</p>
 
     </header>
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="mainpicos.html">Picos</a></li>
-            <li><a href="camps.html">Campeonatos</a></li>
-            <li><a href="aulas.html">Aulas De Surf</a></li>
-            <li><a href="loja.html">Loja</a></li>
+            <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+            <li><a href="mainpicos.html" data-i18n="nav_picos">Picos</a></li>
+            <li><a href="camps.html" data-i18n="nav_camps">Campeonatos</a></li>
+            <li><a href="aulas.html" data-i18n="nav_aulas">Aulas De Surf</a></li>
+            <li><a href="loja.html" data-i18n="nav_loja">Loja</a></li>
         </ul>
 
     </nav>
@@ -36,9 +41,9 @@
 
             <section class="suggestion-section">
                 <div class="suggestion-header">
-                    <span>Morning Sick Recomenda</span>
-                    <h2>3 picos em destaque</h2>
-                    <p>Confira alguns picos da região que merecem atenção.</p>
+                    <span data-i18n="recomenda">Morning Sick Recomenda</span>
+                    <h2 data-i18n="destaque">3 picos em destaque</h2>
+                    <p data-i18n="confira">Confira alguns picos da região que merecem atenção.</p>
                 </div>
 
                 <div class="suggestion-container">
@@ -47,7 +52,7 @@
                         <div class="suggestion-content">
                             <h3>Silveira Norte</h3>
                             <p>Direita clássica, indicada para surfistas intermediários e avançados.</p>
-                            <a href="silveira_norte.html">Ver pico</a>
+                            <a href="picos/silveira_norte.html" data-i18n="ver_pico">Ver pico</a>
                         </div>
                     </div>
 
@@ -56,7 +61,7 @@
                         <div class="suggestion-content">
                             <h3>Rosa Norte</h3>
                             <p>Beach break versátil, com boas opções para diferentes níveis.</p>
-                            <a href="rosa_norte.html">Ver pico</a>
+                            <a href="picos/rosa_norte.html" data-i18n="ver_pico">Ver pico</a>
                         </div>
                     </div>
 
@@ -65,7 +70,7 @@
                         <div class="suggestion-content">
                             <h3>Ibiraquera</h3>
                             <p>Pico conhecido por boas formações e ambiente clássico do surf local.</p>
-                            <a href="ibiraquera.html">Ver pico</a>
+                            <a href="picos/ibiraquera.html" data-i18n="ver_pico">Ver pico</a>
                         </div>
                     </div>
                 </div>
@@ -78,14 +83,14 @@
             </section>
 
             <section>
-                <h2>Sobre o Morning Sick</h2>
-                <p>O Morning Sick é um portal dedicado ao surfe local de Imbituba e região. Nosso objetivo é fornecer
+                <h2 data-i18n="sobre_titulo">Sobre o Morning Sick</h2>
+                <p data-i18n="sobre_texto">O Morning Sick é um portal dedicado ao surfe local de Imbituba e região. Nosso objetivo é fornecer
                     informações atualizadas sobre os melhores picos de surfe, campeonatos locais, aulas de surf e uma
                     loja de roupas que representa o que a marca é de verdade.</p>
 
             </section>
             <section>
-                <h2>O que oferecemos</h2>
+                <h2 data-i18n="oferecemos_titulo">O que oferecemos</h2>
                 <ul>
                     <li><strong>Picos de Surfe:</strong> Informações detalhadas sobre os melhores picos de surfe em
                         Imbituba e região, incluindo condições do mar, dicas de segurança e melhores épocas para surfar.
@@ -102,7 +107,7 @@
         </main>
     </div>
     <footer>
-        <p>&copy; 2026 Morning Sick. Todos os direitos reservados.</p>
+        <p data-i18n="footer">&copy; 2026 Morning Sick. Todos os direitos reservados.</p>
     </footer>
 </body>
 

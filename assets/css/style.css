@@ -1,11 +1,11 @@
 :root {
-    --color-ocean: #0D919F;
-    --color-deep-sea: #0A2540;
-    --color-sand: #E4E0D6;
-    --color-foam: #F5F0E8;
-    --color-text: #1F2937;
+    --color-navy: #0A2540;
+    --color-teal: #0D919F;
+    --color-coral: #FF7060;
+    --color-charcoal: #1F2937;
+    --color-warm-sand: #F5F0E8;
+    --color-linen: #E4E0D6;
     --color-muted: #6B7280;
-    --color-action: #FF7060;
     --shadow-soft: 0 8px 24px rgba(10, 37, 64, 0.08);
     --radius: 12px;
 }
@@ -16,8 +16,8 @@
 
 body {
     margin: 0;
-    background-color: var(--color-sand);
-    color: var(--color-text);
+    background-color: var(--color-warm-sand);
+    color: var(--color-charcoal);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 300;
     line-height: 1.7;
@@ -44,11 +44,12 @@ a {
 
 header,
 .site-header {
-    background: linear-gradient(135deg, var(--color-deep-sea), var(--color-ocean));
-    color: var(--color-foam);
+    position: relative;
+    background: linear-gradient(135deg, var(--color-navy), var(--color-teal));
+    color: var(--color-warm-sand);
     padding: 40px 20px;
     text-align: center;
-    border-bottom: 4px solid var(--color-action);
+    border-bottom: 4px solid var(--color-coral);
 }
 
 .header-title-container {
@@ -77,8 +78,32 @@ header p,
 .site-header p {
     max-width: 680px;
     margin: 8px auto 0;
-    color: var(--color-sand);
+    color: var(--color-linen);
     font-size: 1.05rem;
+}
+
+.lang-switch {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 12px;
+}
+
+.lang-btn {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    font-size: 1.6rem;
+    padding: 6px;
+    transition: transform 0.2s, background 0.2s;
+    line-height: 1;
+}
+
+.lang-btn:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.3);
 }
 
 nav,
@@ -86,7 +111,7 @@ nav,
     position: sticky;
     top: 0;
     z-index: 10;
-    background-color: var(--color-foam);
+    background-color: var(--color-warm-sand);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
@@ -115,7 +140,7 @@ nav a,
     min-height: 40px;
     padding: 8px 16px;
     border-radius: 6px;
-    color: var(--color-text);
+    color: var(--color-charcoal);
     font-weight: 500;
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -126,8 +151,8 @@ nav a:focus,
 .site-nav a:hover,
 .site-nav a:focus,
 .site-nav a.active {
-    background-color: var(--color-sand);
-    color: var(--color-ocean);
+    background-color: var(--color-linen);
+    color: var(--color-teal);
 }
 
 main {
@@ -140,7 +165,7 @@ section {
 
 .intro-section,
 section:not(.cards):not(.suggestion-section) {
-    background-color: var(--color-foam);
+    background-color: var(--color-warm-sand);
     padding: 26px;
     border-radius: var(--radius);
     box-shadow: var(--shadow-soft);
@@ -149,7 +174,7 @@ section:not(.cards):not(.suggestion-section) {
 
 section h2 {
     margin: 0 0 10px;
-    color: var(--color-deep-sea);
+    color: var(--color-navy);
     font-size: 1.65rem;
 }
 
@@ -167,20 +192,34 @@ section li + li {
 }
 
 .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
+    align-items: stretch;
 }
 
 .card-link {
     color: inherit;
     text-decoration: none;
+    display: flex;
+    flex: 1 1 250px;
+    max-width: 320px;
+}
+
+section.cards > .card {
+    flex: 1 1 250px;
+    max-width: 320px;
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: var(--color-foam);
+    background-color: var(--color-linen);
     border-radius: var(--radius);
     box-shadow: var(--shadow-soft);
     border: 1px solid rgba(0, 0, 0, 0.03);
@@ -195,17 +234,24 @@ section li + li {
 
 .card img {
     width: 100%;
-    height: 170px;
+    height: 190px;
     object-fit: cover;
 }
 
 .card-content {
     padding: 18px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content .btn-comprar {
+    margin-top: auto;
 }
 
 .card h3 {
     margin: 0 0 8px;
-    color: var(--color-deep-sea);
+    color: var(--color-navy);
     font-size: 1.2rem;
 }
 
@@ -216,7 +262,7 @@ section li + li {
 
 footer {
     width: 100%;
-    background-color: var(--color-sand);
+    background-color: var(--color-linen);
     color: var(--color-muted);
     text-align: center;
     padding: 32px 18px;
@@ -236,7 +282,7 @@ footer p {
 
 .suggestion-header span {
     display: block;
-    color: var(--color-action);
+    color: var(--color-coral);
     font-weight: 500;
     margin-bottom: 8px;
     text-transform: uppercase;
@@ -252,7 +298,7 @@ footer p {
 
 .suggestion-card {
     display: none;
-    background-color: var(--color-foam);
+    background-color: var(--color-warm-sand);
     border-radius: var(--radius);
     box-shadow: var(--shadow-soft);
     border: 1px solid rgba(0, 0, 0, 0.03);
@@ -278,7 +324,7 @@ footer p {
 
 .suggestion-content h3 {
     margin: 0 0 10px;
-    color: var(--color-deep-sea);
+    color: var(--color-navy);
     font-size: 1.4rem;
 }
 
@@ -289,8 +335,8 @@ footer p {
 
 .suggestion-content a {
     display: inline-block;
-    background-color: var(--color-ocean);
-    color: var(--color-foam);
+    background-color: var(--color-teal);
+    color: var(--color-warm-sand);
     padding: 10px 24px;
     border-radius: 6px;
     text-decoration: none;
@@ -299,7 +345,7 @@ footer p {
 }
 
 .suggestion-content a:hover {
-    background-color: var(--color-deep-sea);
+    background-color: var(--color-navy);
 }
 
 .suggestion-dots {
@@ -324,7 +370,113 @@ footer p {
 .suggestion-dots .dot.active,
 .suggestion-dots .dot:hover {
     opacity: 1;
-    background-color: var(--color-action);
+    background-color: var(--color-coral);
+}
+
+/* ===== FORMULÁRIO ===== */
+.form-section {
+    margin-top: 40px;
+    background-color: var(--color-linen);
+    padding: 32px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+}
+
+.form-container h2 {
+    color: var(--color-navy);
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--color-charcoal);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-muted);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--color-charcoal);
+    background-color: #fff;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-teal);
+    box-shadow: 0 0 0 3px rgba(13, 145, 159, 0.2);
+}
+
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+}
+
+.radio-group input[type="radio"] {
+    margin: 0;
+}
+
+.radio-group label {
+    display: inline;
+    margin: 0;
+    font-weight: normal;
+}
+
+.btn-submit {
+    display: inline-block;
+    width: 100%;
+    padding: 14px;
+    background-color: var(--color-coral);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: var(--color-navy);
+}
+
+.form-feedback {
+    margin-top: 16px;
+    padding: 12px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.form-feedback.success {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.form-feedback.error {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.hidden {
+    display: none;
 }
 
 @media (max-width: 640px) {

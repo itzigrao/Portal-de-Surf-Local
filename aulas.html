@@ -68,6 +68,62 @@
                 </article>
 
             </section>
+            <section class="form-section" id="contato-aulas">
+                <div class="form-container">
+                    <h2>Agende sua Aula</h2>
+                    <p>Preencha os dados abaixo e nossa equipe entrará em contato.</p>
+                    
+                    <form id="inscricao-aulas">
+                        <div class="form-group">
+                            <label for="nome">Nome Completo:</label>
+                            <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefone">Telefone / WhatsApp:</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Experiência (Nível):</label>
+                            <div class="radio-group">
+                                <input type="radio" id="nivel-zero" name="nivel" value="zero" checked>
+                                <label for="nivel-zero">Nenhuma</label>
+                                
+                                <input type="radio" id="nivel-iniciante" name="nivel" value="iniciante">
+                                <label for="nivel-iniciante">Iniciante</label>
+                                
+                                <input type="radio" id="nivel-avancado" name="nivel" value="avancado">
+                                <label for="nivel-avancado">Intermediário/Avançado</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tipo-aula">Tipo de Aula Desejada:</label>
+                            <select id="tipo-aula" name="tipo-aula" required>
+                                <option value="" disabled selected>Escolha uma opção...</option>
+                                <option value="softboard">Iniciantes (Softboard)</option>
+                                <option value="treinamento">Treinamento Avançado</option>
+                                <option value="grupo">Aulas em Grupo</option>
+                                <option value="particular">Aula Particular</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem Adicional:</label>
+                            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Alguma dúvida ou restrição médica?"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit" id="btn-enviar-aula">Enviar Solicitação</button>
+                        <div id="form-feedback" class="form-feedback hidden"></div>
+                    </form>
+                </div>
+            </section>
         </main>
     </div>
 
