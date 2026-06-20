@@ -303,6 +303,8 @@ section.cards > .card {
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 5px;
+    
 }
 
 .btn-comprar:hover,
